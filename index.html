@@ -120,7 +120,7 @@
                     <p id="zodiacDates" class="text-xs text-indigo-300 uppercase tracking-widest mt-1 font-bold"></p>
                 </div>
                 
-                <!-- Quick Info Cards -->
+                <!-- Quick Info Cards (2x2 Grid) -->
                 <div class="grid grid-cols-2 gap-3 text-left">
                     <div class="bg-slate-900/70 rounded-xl p-3 border border-slate-800 shadow-sm">
                         <p class="text-xs text-pink-400 uppercase font-extrabold tracking-wide">Element</p>
@@ -129,6 +129,10 @@
                     <div class="bg-slate-900/70 rounded-xl p-3 border border-slate-800 shadow-sm">
                         <p class="text-xs text-pink-400 uppercase font-extrabold tracking-wide">Ruling Planet</p>
                         <p id="zodiacPlanet" class="text-sm font-semibold mt-0.5 text-slate-100"></p>
+                    </div>
+                    <div class="col-span-2 bg-slate-900/70 rounded-xl p-3 border border-slate-800 shadow-sm">
+                        <p class="text-xs text-cyan-400 uppercase font-extrabold tracking-wide">💎 Birthstone / Lucky Gem</p>
+                        <p id="zodiacStone" class="text-sm font-semibold mt-0.5 text-slate-100"></p>
                     </div>
                 </div>
 
@@ -161,73 +165,73 @@
     <script>
         const zodiacData = {
             Aries: {
-                symbol: "♈", element: "Fire", planet: "Mars", dates: "Mar 21 - Apr 19",
+                symbol: "♈", element: "Fire", planet: "Mars", dates: "Mar 21 - Apr 19", stone: "Diamond 💎 (Courage & Strength)",
                 vibe: "You are bold, energetic, and love being first. You jump straight into action and hate waiting around.",
                 strengths: "Super brave, full of energy, very confident, and always ready to lead.",
                 shadow: "You can get impatient quickly, lose your temper easily, and act without thinking."
             },
             Taurus: {
-                symbol: "♉", element: "Earth", planet: "Venus", dates: "Apr 20 - May 20",
+                symbol: "♉", element: "Earth", planet: "Venus", dates: "Apr 20 - May 20", stone: "Emerald 💚 (Love & Abundance)",
                 vibe: "You love peace, comfort, and good vibes. You enjoy relaxing and treating yourself to nice things.",
                 strengths: "Super reliable, very patient, practical, and fiercely loyal to your friends.",
                 shadow: "You can be very stubborn, hate sudden changes, and sometimes lazy."
             },
             Gemini: {
-                symbol: "♊", element: "Air", planet: "Mercury", dates: "May 21 - Jun 20",
+                symbol: "♊", element: "Air", planet: "Mercury", dates: "May 21 - Jun 20", stone: "Agate 🔮 (Balance & Clarity)",
                 vibe: "You are super smart, chatty, and curious about everything. You get bored easily and love fun conversations.",
                 strengths: "Quick learner, super adaptable, great at talking, and very fun to be around.",
                 shadow: "You change your mind a lot, can be flaky, and struggle to focus on one thing."
             },
             Cancer: {
-                symbol: "♋", element: "Water", planet: "Moon", dates: "Jun 21 - Jul 22",
+                symbol: "♋", element: "Water", planet: "Moon", dates: "Jun 21 - Jul 22", stone: "Ruby / Moonstone 🌙 (Intuition & Protection)",
                 vibe: "You have a huge heart and care deeply about the people close to you. Your feelings run very deep.",
                 strengths: "Incredibly caring, great listener, deeply protective, and very imaginative.",
                 shadow: "Your mood can shift fast, you hold onto past hurts, and you hide when stressed."
             },
             Leo: {
-                symbol: "♌", element: "Fire", planet: "Sun", dates: "Jul 23 - Aug 22",
+                symbol: "♌", element: "Fire", planet: "Sun", dates: "Jul 23 - Aug 22", stone: "Peridot 🌟 (Confidence & Power)",
                 vibe: "You are the life of the party! Warm, bright, and love bringing happiness and fun energy everywhere.",
                 strengths: "Natural born leader, very creative, extremely generous, and fearless.",
                 shadow: "You can be a bit dramatic, love attention too much, and can act bossy."
             },
             Virgo: {
-                symbol: "♍", element: "Earth", planet: "Mercury", dates: "Aug 23 - Sep 22",
+                symbol: "♍", element: "Earth", planet: "Mercury", dates: "Aug 23 - Sep 22", stone: "Sapphire 💙 (Wisdom & Focus)",
                 vibe: "You are the problem solver who notices every little detail. You love keeping things neat and helpful.",
                 strengths: "Super smart, hardworking, extremely organized, and always ready to help.",
                 shadow: "You overthink everything, judge yourself too harshly, and stress over tiny flaws."
             },
             Libra: {
-                symbol: "♎", element: "Air", planet: "Venus", dates: "Sep 23 - Oct 22",
+                symbol: "♎", element: "Air", planet: "Venus", dates: "Sep 23 - Oct 22", stone: "Opal / Tourmaline 🌈 (Harmony & Peace)",
                 vibe: "You are a total people person who loves harmony, beauty, and fair treatment for everyone.",
                 strengths: "Great peacemaker, very charming, super polite, and fair-minded.",
                 shadow: "You hate saying 'no' to people, avoid arguments at all costs, and can't make up your mind."
             },
             Scorpio: {
-                symbol: "♏", element: "Water", planet: "Pluto", dates: "Oct 23 - Nov 21",
+                symbol: "♏", element: "Water", planet: "Pluto", dates: "Oct 23 - Nov 21", stone: "Topaz / Aquamarine 🌊 (Transformation & Focus)",
                 vibe: "You are intense, mysterious, and feel things on a whole different level. You see right through fake people.",
                 strengths: "Super loyal, deeply passionate, incredibly brave, and fiercely protective.",
                 shadow: "You keep too many secrets, hold grudges forever, and can be overly jealous."
             },
             Sagittarius: {
-                symbol: "♐", element: "Fire", planet: "Jupiter", dates: "Nov 22 - Dec 21",
+                symbol: "♐", element: "Fire", planet: "Jupiter", dates: "Nov 22 - Dec 21", stone: "Turquoise 🏹 (Luck & Adventure)",
                 vibe: "You are a free-spirited explorer who loves freedom, fun adventures, and learning about the world.",
                 strengths: "Super positive, hilarious, very open-minded, and always ready for an adventure.",
                 shadow: "You can be too blunt with your words, get restless fast, and promise too much."
             },
             Capricorn: {
-                symbol: "♑", element: "Earth", planet: "Saturn", dates: "Dec 22 - Jan 19",
+                symbol: "♑", element: "Earth", planet: "Saturn", dates: "Dec 22 - Jan 19", stone: "Garnet 🍷 (Success & Discipline)",
                 vibe: "You are a hard worker with big goals. You turn your dreams into real-life success step by step.",
                 strengths: "Super disciplined, highly responsible, very smart with money, and dependable.",
                 shadow: "You work way too much, hide your emotions, and can be way too serious."
             },
             Aquarius: {
-                symbol: "♒", element: "Air", planet: "Uranus", dates: "Jan 20 - Feb 18",
-                vype: "You march to the beat of your own drum! Unique, futuristic, and care a lot about making the world better.",
+                symbol: "♒", element: "Air", planet: "Uranus", dates: "Jan 20 - Feb 18", stone: "Amethyst 💜 (Creativity & Peace)",
+                vibe: "You march to the beat of your own drum! Unique, futuristic, and care a lot about making the world better.",
                 strengths: "Very original, super smart, open-minded, and proudly unique.",
                 shadow: "You can seem emotionally cold, act completely unpredictable, and rebel just to rebel."
             },
             Pisces: {
-                symbol: "♓", element: "Water", planet: "Neptune", dates: "Feb 19 - Mar 20",
+                symbol: "♓", element: "Water", planet: "Neptune", dates: "Feb 19 - Mar 20", stone: "Aquamarine 🌊 (Healing & Dreaminess)",
                 vibe: "You are a dreamy, creative soul who lives partly in your own imagination. Super gentle and kind.",
                 strengths: "Incredibly empathetic, deeply artistic, very intuitive, and sweet.",
                 shadow: "You try to escape reality too often, trust the wrong people, and let stress drown you."
@@ -250,7 +254,6 @@
             const signName = getZodiacSignName(month, day);
             const data = zodiacData[signName];
             
-            // Reset dropdown state
             document.getElementById('zodiacSelect').value = "";
             displayResult(signName, data);
         }
@@ -260,7 +263,6 @@
             if (!selectedSign) return;
 
             const data = zodiacData[selectedSign];
-            // Clear date picker state
             document.getElementById('birthdate').value = "";
             displayResult(selectedSign, data);
         }
@@ -286,12 +288,13 @@
             document.getElementById('zodiacDates').innerText = data.dates;
             document.getElementById('zodiacElement').innerText = data.element;
             document.getElementById('zodiacPlanet').innerText = data.planet;
+            document.getElementById('zodiacStone').innerText = data.stone;
             
             document.getElementById('zodiacVibe').innerText = data.vibe;
             document.getElementById('zodiacStrengths').innerText = data.strengths;
             document.getElementById('zodiacShadow').innerText = data.shadow;
 
-            currentResultText = `✨ Zodiac & Personality Profile: ${data.symbol} ${name} ✨\nDates: ${data.dates}\nElement: ${data.element}\nRuling Planet: ${data.planet}\n\n💖 Vibe: ${data.vibe}\n🔥 Strengths: ${data.strengths}\n⚡ Blind Spots: ${data.shadow}`;
+            currentResultText = `✨ Zodiac & Personality Profile: ${data.symbol} ${name} ✨\nDates: ${data.dates}\nElement: ${data.element}\nRuling Planet: ${data.planet}\nBirthstone: ${data.stone}\n\n💖 Vibe: ${data.vibe}\n🔥 Strengths: ${data.strengths}\n⚡ Blind Spots: ${data.shadow}`;
 
             document.getElementById('result').classList.remove('hidden');
         }
